@@ -29,4 +29,6 @@ jobs:
           path: site/
       - name: Deploy GitHub Pages site
         uses: actions/deploy-pages@v1.2.4
+        with:
+          token: ${{ github.token }}
           
