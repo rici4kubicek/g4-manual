@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Local time calculation - G4 manual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Local time calculation";
+        var mkdocs_page_input_path = "02-time-handling.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> G4 manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../01-menu/">MENU</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Local time calculation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#basic-setting-control-according-to-source-of-synchronization">Basic setting - control according to source of synchronization</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calculation-using-mobaline-zime-zones">Calculation using MOBALine zime zones</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calculation-using-time-zone-server-mobatime">Calculation using time zone server MOBATIME</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calculation-using-time-zone-entries-preconfigured-by-moba-nms-software">Calculation using time zone entries preconfigured by MOBA-NMS software</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calculation-according-to-internal-time-zone-table">Calculation according to internal time zone table</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../03-non-ethernet/">Non-network clock operation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../05-ethernet/">NTP and PoE clock operation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../06-fu/">Firmware update</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">G4 manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Local time calculation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="local-time-calculation">Local time calculation</h1>
+<h2 id="basic-setting-control-according-to-source-of-synchronization">Basic setting - control according to source of synchronization</h2>
+<p>This setting is suitable for digital clock synchronized by a DCF receiver or controlleed by a master clock as slave clock in a time distribution system. The internal time zone table is not used.</p>
+<h2 id="calculation-using-mobaline-zime-zones">Calculation using MOBALine zime zones</h2>
+<p>This setting is suitable for digital clock controlled by a master clock as a MOBALine slave clock in a time distribution system with possibility to display different MOBALine time zones.</p>
+<h2 id="calculation-using-time-zone-server-mobatime">Calculation using time zone server MOBATIME</h2>
+<p>This setting is suitable for NTP, PoE, WiFi and WiFi5 digital clocks controlled by a MOBATIME NTP servers which supports the time zone server functionality.</p>
+<h2 id="calculation-using-time-zone-entries-preconfigured-by-moba-nms-software">Calculation using time zone entries preconfigured by MOBA-NMS software</h2>
+<p>This setting is suitable for NTP, PoE, WiFi and WiFi5 digital clocks, where several user defined time zone entries should be used. The time zone entries are preconfigured by means of the MOBA-NMS software.</p>
+<h2 id="calculation-according-to-internal-time-zone-table">Calculation according to internal time zone table</h2>
+<p>This setting is suitable for autonomous digital clock or in cases where the displayed time is needed in another time zone than provided by the synchronization source. Displayed time and date calculation is based on the internal time zone table or on the user-specific time zone parameters.
+See chapter 9 Time zone table v11.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../01-menu/" class="btn btn-neutral float-left" title="MENU"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../03-non-ethernet/" class="btn btn-neutral float-right" title="Non-network clock operation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../01-menu/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../03-non-ethernet/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
