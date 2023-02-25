@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Non-network clock operation - G4</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Non-network clock operation";
+        var mkdocs_page_input_path = "03-non-ethernet.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> G4
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../01-menu/">MENU</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../02-time-handling/">Local time calculation</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Non-network clock operation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#autonomous-clock-synchronized-by-dcf77-receiver">Autonomous clock synchronized by DCF77 receiver</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#autonomous-clock-synchronized-by-gps-receiver">Autonomous clock synchronized by GPS receiver</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#autonomous-clock-synchronized-by-gps-receiver-gps-4500">Autonomous clock synchronized by GPS receiver (GPS 4500)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slave-clock-controlled-by-synchronizing-impulses">Slave clock controlled by synchronizing impulses</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#synchronization-and-time-setting-o3-mode-1-and-3">Synchronization and time setting - o3 mode 1 and 3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#synchronozation-only-o3-mode-2-and-4">Synchronozation only - o3 mode 2 and 4</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slave-clock-controlled-by-mobatime-serial-code-mobaline-or-irig-b">Slave clock controlled by MOBATIME serial code, MOBALine or IRIG-B</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slave-clock-controlled-by-if482-over-rs485">Slave clock controlled by IF482 over RS485</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../05-ethernet/">NTP and PoE clock operation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../06-fu/">Firmware update</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">G4</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Non-network clock operation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="non-network-clock-operation">Non-network clock operation</h1>
+<p>Configure the position of DIP switch according to the source of synchronization (DCF position if the source is DCF, otherwise do not configure the position for MOBATIME serial code, polarized impulse line, MOBALine or IRIG-B).
+Choose the item <strong>o2</strong> in <strong>SYNC</strong> menu and set the type of synchronization. The autodetection mode (**o2: A), when the type of synchronization signal is set automatically, is applicable for DCF signal, MOBATIME serial code, IRIG-B. The permamently lit color during the time display signalizes the clock is synchronized by the synchronization source.</p>
+<h2 id="autonomous-clock-synchronized-by-dcf77-receiver">Autonomous clock synchronized by DCF77 receiver</h2>
+<ul>
+<li>
+<p>Set value <strong>A</strong> in <strong>SYNC</strong> menu items <strong>o1, o2</strong> and in <strong>diSP</strong> menu item <strong>d2</strong>.</p>
+</li>
+<li>
+<p>Connect the DCF77 receiver to the clock terminal board placed on the anchoring plate (LINE IN terminals) using twin-wire cable.</p>
+</li>
+<li>
+<p>The maximum wire length depends on its diameter (approx. 100-300 m).</p>
+</li>
+<li>
+<p>In case of the connection is correct and the input signal is at high level, the LED on the receiver is flashing periodically once a second with one pulse left out at 59^th^ second. 
+<strong>If the polarity is incorrect, the LED does not flash. In such case, intercharge the two wires.</strong></p>
+</li>
+<li>
+<p>Install the receiver at a place with a high-level radio signal. Do not install the receiver near sources of interfering signals, such as PCs, TVs or other types of power consumers (the digital clock itself generates intefering signals too).</p>
+</li>
+<li>
+<p>Position the receiver with its transparent cover (DCF 450) or the arrow on the cover (DCF 4500) facing the transmitter (located in Frankfurt, Germany). Presuming the good quality DCF77 signal the synchronization takes place in approx. 3-4 minutes. In case of poor quiality of the signal (mainly during day time), the first time setting is to be done manually. The red LED of the receiver displays a working connection by flashing once a second without flickering.</p>
+</li>
+</ul>
+<h2 id="autonomous-clock-synchronized-by-gps-receiver">Autonomous clock synchronized by GPS receiver</h2>
+<ul>
+<li>
+<p>Set values <strong>o2: 10, 21: A</strong> in the <strong>SYNC</strong> menu and the desired time zone in <strong>dISP</strong> menu item <strong>d2</strong>.</p>
+</li>
+<li>
+<p>Connect the GPS antenna to SMA connector.</p>
+</li>
+<li>
+<p>Presuming the good position of the GPS receiver. The synchronization takesp lace in approx. 10-20 minutes.</p>
+</li>
+</ul>
+<h2 id="autonomous-clock-synchronized-by-gps-receiver-gps-4500">Autonomous clock synchronized by GPS receiver (GPS 4500)</h2>
+<ul>
+<li>
+<p>Set value <strong>A</strong> in <strong>SYNC</strong> menu items <strong>o1, o2</strong> and the desired time zone in <strong>dISP</strong> menu item <strong>d2</strong>.</p>
+</li>
+<li>
+<p>Using jumper JP17 set the power supply output (DC OUT) on pins 3, 4 of the JP1 connector.</p>
+</li>
+<li>
+<p>Connect GPS receiver (GPS 4500) to the clock PCB (LINE IN and DC OUT terminals) using four-wire cable.
+<strong>Please note the correct polarity of the wires - see the GPS user manual.</strong></p>
+</li>
+<li>
+<p>For the correct placing of the receiver please follow the GPS user manual.</p>
+</li>
+<li>
+<p>Presuming the good position of the GPS receiver (GPS 4500) the synchronization takes place in approx. 10-20 minutes.</p>
+</li>
+</ul>
+<h2 id="slave-clock-controlled-by-synchronizing-impulses">Slave clock controlled by synchronizing impulses</h2>
+<p>On digital clock connected in time distribution system controlled by synchronizing impulses choose the item <strong>o2</strong> in the <strong>SYNC</strong> menu and set according type of impulse line (polarized / unpolarized impulses, synchronization and time setting / synchronization only). Set the value <strong>A</strong> in <strong>SYNC</strong> menu item <strong>o1</strong> and in <strong>dISP</strong> menu item <strong>d2</strong>.</p>
+<h3 id="synchronization-and-time-setting-o3-mode-1-and-3">Synchronization and time setting - o3 mode 1 and 3</h3>
+<ul>
+<li>
+<p>Clocks are set according to the slave line time on the Master clock.</p>
+</li>
+<li>
+<p>Stop the Slave line on Master clock.</p>
+</li>
+<li>
+<p>Set all Slave clocks on same time. Set the current date on the digital clock. The clock stand still and the colon fashes in 2 second interval.</p>
+</li>
+<li>
+<p>Set the time of the Slave line to same time as on Slave clocks.</p>
+</li>
+<li>
+<p>Run the Slave line on Master clock.</p>
+</li>
+<li>
+<p>After receiving each impulse, the displayed time is increased by one minute (or by 30 seconds or 1 second respectively).</p>
+</li>
+<li>
+<p>After expiration of run-out time the Slave clocks are synchronized by the time information generated by the Master clock, the colon flashes constantly.</p>
+</li>
+<li>
+<p>In case of line fault, the clock displays the right time information based on its own quartz time base. When the normal operation of the line resumes, the Slave clock adjusts itself to the time equeal to the Master clock.</p>
+</li>
+</ul>
+<h3 id="synchronozation-only-o3-mode-2-and-4">Synchronozation only - o3 mode 2 and 4</h3>
+<ul>
+<li>
+<p>The clock time-base is synchronized by incoming pulses in normal operation of the Slave line.</p>
+</li>
+<li>
+<p>Set current date and time on the Slave clock according the Master clock time with accuracy of +-30 seconds (or +-15 seconds or +-0.5 second respectively).</p>
+</li>
+<li>
+<p>The colon flashes in 2 second interval.</p>
+</li>
+<li>
+<p>After 2-3 minutes are the clocks synchronized with the Master clock. The colon is permamently lit during the display of time.</p>
+</li>
+<li>
+<p>In case of the line fault, the clock displays the right time information based on its own quartz time base. When the normal operation of the line resumes, the clock synchronizes with the incoming pulses.</p>
+</li>
+</ul>
+<h2 id="slave-clock-controlled-by-mobatime-serial-code-mobaline-or-irig-b">Slave clock controlled by MOBATIME serial code, MOBALine or IRIG-B</h2>
+<ul>
+<li>
+<p>After connection of the digital clock to the signal source, time and date are adjusted automatically, following the receipt of calid time information.</p>
+</li>
+<li>
+<p>The time setting with using the serial coded line takes place with at lease 3-4 minutes, for MOBALine and IRIG-B within 6-15 seconds.</p>
+</li>
+</ul>
+<h2 id="slave-clock-controlled-by-if482-over-rs485">Slave clock controlled by IF482 over RS485</h2>
+<ul>
+<li>
+<p>After connection of the digital clock to the line, time and date are adjusted automaticall, following  the receipt of valid time information.</p>
+</li>
+<li>
+<p>Setting the tune takes place within at least 5 minutes.</p>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../02-time-handling/" class="btn btn-neutral float-left" title="Local time calculation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../05-ethernet/" class="btn btn-neutral float-right" title="NTP and PoE clock operation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../02-time-handling/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../05-ethernet/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
