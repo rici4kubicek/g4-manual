@@ -41,6 +41,8 @@ Choose the item **o2** in **SYNC** menu and set the type of synchronization. The
 
 * Presuming the good position of the GPS receiver (GPS 4500) the synchronization takes place in approx. 10-20 minutes.
 
+![GPS4500](GPS4500.svg)
+
 
 ## Slave clock controlled by synchronizing impulses
 
