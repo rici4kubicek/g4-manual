@@ -67,6 +67,18 @@ If value in MENU tables contains "*", it means the item has accessible submenu.
 Example:  
 
 
+|**Program item**|**Function**|**Description**|
+|---------------|---------------|---------------|
+|dISP|display of time, date, temperature|enter the submenu (d menu)|
+|SYNC|synchronization|enter the submenu (o menu)|
+|Net|network parameters|enter the submenu (n menu)|
+|SEN1-4 SEN3,4 only for DT|sensors - 1st-4th temperature (temperature, combined)|enter the submenu (t menu)|
+|StoP|stopwatch|enter the submenu (h menu)|
+|tIME|setting of time and date|enter the submenu for time and date setting|
+|SYSt|system menu|enter the submenu (c menu)|
+|r\_.\_ (e.g. r6.17)|software version|
+
+
 ### Submenu for display setting - diSP
 
 
