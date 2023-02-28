@@ -66,6 +66,7 @@ Setting of individual items in the submenu can be found in chapters 2.3.x.
 If value in MENU tables contains "*", it means the item has accessible submenu.  
 Example:  
 
+##### MD format
 
 |**Program item**|**Function**|**Description**|
 |---------------|---------------|---------------|
@@ -78,6 +79,9 @@ Example:
 |SYSt|system menu|enter the submenu (c menu)|
 |r\_.\_ (e.g. r6.17)|software version|
 
+
+##### SVG format
+![Menu](MENU_0.svg)
 
 ### Submenu for display setting - diSP
 
